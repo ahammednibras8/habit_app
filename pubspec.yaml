@@ -17,3 +17,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/Logo/logo.png
+    - assets/images/BGs/SplashCircleBG.png
