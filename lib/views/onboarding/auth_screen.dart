@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mindful_habit_builder_app/core/utils/app_colors.dart';
 import 'package:mindful_habit_builder_app/core/utils/app_fonts.dart';
 import 'package:mindful_habit_builder_app/viewmodels/onboarding_model_screen.dart';
+import 'package:mindful_habit_builder_app/views/widgets/my_button.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -93,9 +94,73 @@ class _AuthScreenState extends State<AuthScreen> {
 
   //Auth Button Container for Athentication
   Widget _authButtonContainer() {
-    return Container(
-      height: 126,
-      width: 343,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        //Space between buttons:
+        final spacing = constraints.maxWidth < 360 ? 6.0 : 8.0;
+
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const MyButton(
+              height: 52,
+              icon: Icons.login_outlined,
+              text: 'Continue with E-mail',
+              color: AppColors.white,
+              textColor: AppColors.primaryBlue,
+              fontSize: 14,
+              iconSize: 18,
+            ),
+            SizedBox(height: spacing * 1.5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Expanded(
+                  child: MyButton(
+                    height: 36,
+                    color: AppColors.white,
+                    icon: Icons.apple,
+                    text: 'Apple',
+                    textColor: AppColors.black100,
+                  ),
+                ),
+                SizedBox(width: spacing),
+                const Expanded(
+                  child: MyButton(
+                    height: 36,
+                    color: AppColors.white,
+                    icon: Icons.g_mobiledata_rounded,
+                    text: 'Google',
+                    textColor: AppColors.black100,
+                  ),
+                ),
+                SizedBox(width: spacing),
+                const Expanded(
+                  child: MyButton(
+                    height: 36,
+                    color: AppColors.white,
+                    icon: Icons.facebook,
+                    text: 'Facebook',
+                    textColor: AppColors.black100,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: spacing * 1.5),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: spacing * 2),
+              child: Text(
+                'By continuing, you agree to our Terms of Service and Privacy Policy.',
+                textAlign: TextAlign.center,
+                style: AppFonts.alternativeBook.copyWith(
+                  color: AppColors.blue40,
+                  height: 1.3,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -104,7 +169,7 @@ class _AuthScreenState extends State<AuthScreen> {
     return OnboardingModelScreen(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
           child: Column(
             children: [
               Expanded(

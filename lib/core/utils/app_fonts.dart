@@ -25,4 +25,10 @@ class AppFonts {
         fontWeight: medium,
         height: 1.4,
       );
+  static TextStyle get alternativeBook => const TextStyle(
+        fontFamily: family,
+        fontSize: 12,
+        fontWeight: regular,
+        height: 0.75,
+      );
 }

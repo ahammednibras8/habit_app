@@ -25,10 +25,14 @@ class AppColors {
     stops: [0.0, 0.25, 0.5, 1.0],
   );
 
-  // Primary/Base
-  static const Color white = Color(0xffFFFFFF);
+  //Primary/Black
+  static const Color black100 = Color(0xff040415);
 
   //Primary/Blue
   static const Color blue60 = Color(0xff888EFF);
+  static const Color blue40 = Color(0xffAFB4FF);
   static const Color blue20 = Color(0xffD7D9FF);
+
+  // Primary/Base
+  static const Color white = Color(0xffFFFFFF);
 }
