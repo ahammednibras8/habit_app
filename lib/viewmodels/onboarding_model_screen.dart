@@ -20,7 +20,7 @@ class OnboardingModelScreen extends StatelessWidget {
           // Circle Ring
           Center(
             child: Image.asset(
-              'assets/images/BGs/SplashCircleBG.png',
+              'assets/vectors/circle-ring.png',
               width: 475,
               height: 475,
               fit: BoxFit.cover,

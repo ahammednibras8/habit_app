@@ -19,5 +19,13 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/Logo/logo.png
-    - assets/images/BGs/SplashCircleBG.png
+    - assets/vectors/
+    - assets/logo/
+
+  fonts:
+    - family: Cereal
+      fonts:
+        - asset: assets/fonts/AirbnbCereal-bold.otf
+          weight: 700
+        - asset: assets/fonts/AirbnbCereal-medium.otf
+          weight: 500

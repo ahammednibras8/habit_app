@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_habit_builder_app/core/utils/app_colors.dart';
 import 'package:mindful_habit_builder_app/viewmodels/onboarding_model_screen.dart';
+import 'package:mindful_habit_builder_app/views/onboarding/auth_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -35,7 +36,14 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     Future.delayed(const Duration(seconds: 4), () {
-      if (mounted) {}
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const AuthScreen(),
+          ),
+        );
+      }
     });
   }
 
@@ -58,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
-                        'assets/Logo/logo.png',
+                        'assets/logo/logo.png',
                         width: 75,
                         height: 75,
                         filterQuality: FilterQuality.high,
