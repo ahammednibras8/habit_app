@@ -29,8 +29,8 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final defaultFontSize = screenWidth < 360 ? 11.0 : 12.0;
-    final defaultIconSize = screenWidth < 360 ? 14.0 : 16.0;
+    final defaultFontSize = screenWidth < 360 ? 12.0 : 13.0;
+    final defaultIconSize = screenWidth < 360 ? 15.0 : 16.0;
 
     return Container(
       height: height,
@@ -57,31 +57,36 @@ class MyButton extends StatelessWidget {
                   horizontal: screenWidth < 360 ? 6 : 8,
                   vertical: 4,
                 ),
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (icon != null) ...[
-                    Icon(
-                      icon,
-                      color: textColor ?? AppColors.black100,
-                      size: iconSize ?? defaultIconSize,
-                    ),
-                    SizedBox(width: screenWidth < 360 ? 3 : 4),
-                  ],
-                  if (text != null)
-                    Text(
-                      text!,
-                      style: AppFonts.alternativeBook.copyWith(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (icon != null) ...[
+                      Icon(
+                        icon,
                         color: textColor ?? AppColors.black100,
-                        fontSize: fontSize ?? defaultFontSize,
-                        height: 1.2,
+                        size: iconSize ?? defaultIconSize,
                       ),
-                    ),
-                ],
-              ),
+                      SizedBox(width: screenWidth < 360 ? 4 : 6),
+                    ],
+                    if (text != null)
+                      Flexible(
+                        child: Text(
+                          text!,
+                          style: AppFonts.alternativeBook.copyWith(
+                            color: textColor ?? AppColors.black100,
+                            fontSize: fontSize ?? defaultFontSize,
+                            height: 1.2,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                  ],
+                );
+              },
             ),
           ),
         ),
