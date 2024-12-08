@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mindful_habit_builder_app/core/utils/app_colors.dart';
 import 'package:mindful_habit_builder_app/core/utils/app_fonts.dart';
 import 'package:mindful_habit_builder_app/viewmodels/onboarding_model_screen.dart';
@@ -119,7 +120,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   child: MyButton(
                     height: 36,
                     color: AppColors.white,
-                    icon: Icons.apple,
+                    icon: FontAwesomeIcons.apple,
                     text: 'Apple',
                     textColor: AppColors.black100,
                   ),
@@ -129,7 +130,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   child: MyButton(
                     height: 36,
                     color: AppColors.white,
-                    icon: Icons.g_mobiledata_rounded,
+                    icon: FontAwesomeIcons.google,
                     text: 'Google',
                     textColor: AppColors.black100,
                   ),
@@ -139,7 +140,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   child: MyButton(
                     height: 36,
                     color: AppColors.white,
-                    icon: Icons.facebook,
+                    icon: FontAwesomeIcons.facebook,
                     text: 'Facebook',
                     textColor: AppColors.black100,
                   ),
